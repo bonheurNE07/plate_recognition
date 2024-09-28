@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Update Vehicle: {{ vehicle.vehicle_model }}</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.vehicle_model.label_tag }}
+            {{ form.vehicle_model }}
+        </div>
+        <div class="mb-3">
+            {{ form.vehicle_color.label_tag }}
+            {{ form.vehicle_color }}
+        </div>
+        <div class="mb-3">
+            {{ form.owner_name.label_tag }}
+            {{ form.owner_name }}
+        </div>
+        <div class="mb-3">
+            {{ form.country_of_origin.label_tag }}
+            {{ form.country_of_origin }}
+        </div>
+        <div class="mb-3">
+            {{ form.destination_country.label_tag }}
+            {{ form.destination_country }}
+        </div>
+        <div class="mb-3">
+            {{ form.vehicle_photo.label_tag }}
+            {{ form.vehicle_photo }}
+        </div>
+        <button type="submit" class="btn btn-primary">Update Vehicle</button>
+    </form>
+</div>
+{% endblock %}

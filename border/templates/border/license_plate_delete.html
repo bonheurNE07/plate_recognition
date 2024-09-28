@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete License Plate{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="my-4">Delete License Plate</h2>
+    <p>Are you sure you want to delete the license plate <strong>{{ license_plate.license_plate_number }}</strong>?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'border:license-plate-list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

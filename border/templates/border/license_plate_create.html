@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Create License Plate{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="my-4">Create License Plate</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.vehicle.label_tag }}
+            {{ form.vehicle }}
+        </div>
+        <div class="mb-3">
+            {{ form.license_plate_number.label_tag }}
+            {{ form.license_plate_number }}
+        </div>
+        <div class="mb-3">
+            {{ form.issued_at.label_tag }}
+            {{ form.issued_at }}
+        </div>
+        <div class="mb-3">
+            {{ form.license_plate_image.label_tag }}
+            {{ form.license_plate_image }}
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Create License Plate</button>
+    </form>
+</div>
+{% endblock %}

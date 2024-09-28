@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Vehicle{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="my-4">Delete Vehicle</h2>
+    <p>Are you sure you want to delete the vehicle <strong>{{ vehicle }}</strong>?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'border:vehicle-create' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
